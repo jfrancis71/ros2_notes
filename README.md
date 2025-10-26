@@ -32,3 +32,9 @@ ros2 run image_publisher image_publisher_node http://192.168.1.213/video.mjpg --
 Questions:
 Can we pull images over USB in compressed format and send directly over network to save robot compute/latency?
 
+Not strictly ROS2 but useful anyway, we can publish an image stream as an http stream with ustreamer:
+```
+ustreamer --device=/dev/video1 --host=0.0.0.0 --port=80
+```
+This is available as a Ubuntu package on x86.
+See https://github.com/pikvm/ustreamer
